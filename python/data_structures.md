@@ -20,6 +20,10 @@
 
   ex) '!'.join('ssafy') - 's!s!a!f!y'
 
+  ```python
+  ' '.join(map(str,student)) #만약 리스트를 문자열로 바꾸고 싶을 때 활용!
+  ```
+
 - .capitalize() - 첫문자 대문자, 나머지 소문자
 
 - .title() - '나공백이후 단어 첫문자를 대문자
@@ -64,6 +68,8 @@
 result = []
 result = map(int, input().sprit(' '))
 print(list(result))
+
+sum(list(map(int, input().split()))) 
 ```
 
 
@@ -100,11 +106,66 @@ print(list(result))
 - Create - a['서울'] = 02 / Read - a.get() / Update - a.update() / Delete - a.pop()
 
 ```python
+my_dict.get('apple',0) #오류났을 때 반환값 정할 수 있음
+my_dict.pop('melon', 0)
+my_dict['apple']
+
 result = {}
 for key, value in dusts.items():
-if value > 70:
-result[key] = value
+	if value > 70:
+		result[key] = value
 
 {key: value for key, value in dusts.items() if values > 70}
+```
+
+```python
+dictionary에서 for를 활용하는 4가지 방법
+# 0. dictionary 순회 (key 활용)
+for key in dict:
+    print(key)
+    print(dict[key])
+
+
+# 1. `.keys()` 활용
+for key in dict.keys():
+    print(key)
+    print(dict[key])
+
+
+# 2. `.values()` 활용
+# 이 경우 key는 출력할 수 없음
+for val in dict.values():
+    print(val)
+
+
+# 3. `.items()` 활용
+for key, val in dict.items():
+    print(key, val)
+    
+print(sum(blood_types.values())) #sum으로 딕셔너리 value값 합치기 가능
+print(f'검사에 참가한 사람은 총 {sum(blood_types.values())}명입니다.')
+```
+
+```python
+counter = {}
+
+#딕셔너리에 새로운 값 넣기
+for title in book_title: 
+    if title in counter:
+        counter[title] += 1
+    else:
+        counter[title] = 1
+print(counter)
+
+#get함수로 풀기
+title_counter = {}
+
+for title in book_title:
+    title_counter[title] = title_counter.get(title, 0) + 1
+    
+print(title_counter)
+
+# Dictionary comprehension
+{key: '나쁨' if value > 80 else '보통'  for key, value in dusts.items()}
 ```
 
