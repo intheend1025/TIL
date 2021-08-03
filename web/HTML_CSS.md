@@ -87,7 +87,18 @@ h2 {
    - span / a / img / input, label / b, em, i, strong 등
 7. display : none (공간까지 삭제) vs visibility : hidden (공간차지하나 안보이게)
 8. CSS position
-   - relative : 상대위치 (static위치 기준으로 이동)
-   - absolute : 절대위치 (static이 아닌 가장 가까이 부모/조상요소 기준으로 이동 - 없으면 body)
+   - relative : 상대위치 (static위치 기준으로 이동, 자기자리 차지하고있음)
+   - absolute : 절대위치 (static이 아닌 가장 가까이 부모/조상요소 기준으로 이동 - 없으면 body기준, 자리 차지하는 공간 없어짐)
    - fixed : 고정 위치 (viewport 기준으로 이동 - 스크롤시에도 같이이동)
+
+```html
+color: aliceblue; 폰트색
+background-color: blanchedalmond; 배경색
+text-align: center; 문자열 정렬
+width: 100%; 해당 공간에 꽉차게 만들기
+border: 1px solid black; 테두리
+border-radius: 4px; 테두리 반경 (모서리 둥글게)
+input>placeholder="아이디를 입력 해 주세요." input시 박스에 보이는 값
+input>value="로그인" 제출시 누르는값 변경
+```
 
