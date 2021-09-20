@@ -60,6 +60,20 @@ for i in range (len(B)-1, -1, -1):
 - nPr = n * (n-1) * ... * (n-r+1) = n!/(n-r)!
 - nPn = n!
 
+```python
+from itertools import permutations
+# 순열 : a 리스트에서 2개씩 뽑아 튜플로 (순서상관있음)
+permute = permutations(a,2)
+```
+
+```python
+from itertools import combinations
+# 조합 : a 리스트에서 2개씩 뽑아 튜플로 (순서상관없음)
+combi = combinations(a,2)
+```
+
+
+
 #### 탐욕(greedy) 알고리즘
 
 - 해선택 (부분문제의 최적해)
