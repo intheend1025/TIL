@@ -27,7 +27,7 @@
   - 전위순회 VLR 
 
     ```python
-    def preorder_traverse(T):
+    def pre_order_traverse(T):
         if T:
             visit(T)
             preorder_traverse(T.left)
@@ -38,7 +38,27 @@
   
   - 중위순회 LVR
   
+    ```python
+    def in_order_traverse(T):
+        if T:
+            preorder_traverse(T.left)
+            visit(T)
+            preorder_traverse(T.right)
+    ```
+  
+    
+  
   - 후위순회 LRV
+  
+    ```python
+    def post_order_traverse(T):
+        if T:
+            preorder_traverse(T.left)
+            preorder_traverse(T.right)
+            visit(T)
+    ```
+  
+    
 
 ### 이진탐색 트리
 
