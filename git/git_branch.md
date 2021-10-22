@@ -15,6 +15,8 @@ $ git switch -c b3 (b3 브랜치 생성하면서 스위치해줘)
 
 $ git log --oneline (깃로그 상태확인)
 $ git log --oneline --graph (깃로그 그래프로 상태확인)
+
+$ git push origin 브런치이름
  
 merge하는 법 (master에서 머지해야 마스터가 앞으로 나아감 )
 $ git switch master
