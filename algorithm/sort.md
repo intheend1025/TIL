@@ -21,7 +21,7 @@ def partition(A, l, r):
             j -= 1
         if i < j : 
             A[i], A[j] = A[j], A[i]
-    A[l], A[j] = A[j, A[l]
+    A[l], A[j] = A[j], A[l]
     return j
     
 # Lomuto partition 알고리즘 (한방향으로 가다가 피봇기준 나눠짐)
