@@ -72,3 +72,42 @@ axios.get(URL)
 
 
 
+```javascript
+// comment-form을 아이디값으로 가진 인자 추출
+const commentForm = document.querySelector('#comment-form')
+// submit 이벤트 발생 시 해당 함수 호출 및 실행
+commentForm.addEventListener('submit', function (event) {
+    // 실행해서 자기맘대로 끝내는거 방지
+    event.preventDefault()
+    // data-article-pk="{{ article.pk }}" 폼에 넣어준 데이터셋 가져오기
+    const articlePk = event.target.dataset.articlePk
+    // post 방식 csrf토큰 가져오기
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+    // 컨텐츠 내용 가져오기 (댓글 내용)
+    const content = document.querySelector('[name=content]').value
+	// ??
+    const formData = new FormData()
+    formData.append('content', content)
+	// 프로미스 객체를 반환하는 post 요청 보내기
+    axios({
+      method: 'post',
+      url: `/articles/${articlePk}/comments/`,
+      data: formData,
+      headers: { 'X-CSRFToken': csrftoken },
+    })
+      // 성공시 수행
+      .then((res) => {
+        // li 속성 만들어 내용 넣어주기
+        const li = document.createElement('li')
+        li.innerText = `${res.data.username} - ${res.data.content}`
+
+        const ul = document.querySelector('ul')
+        // ul의 자식 인자로 넣어주기
+        ul.appendChild(li)
+
+        // 댓글창 리셋
+        event.target.reset()
+      })
+  })
+```
+
